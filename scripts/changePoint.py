@@ -10,21 +10,15 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from statsmodels.tsa.arima.model import ARIMA
 import numpy as np
 from prophet import Prophet
-from tensorflow.keras.models import Sequential # type: ignore
-from tensorflow.keras.layers import LSTM, Dense # type: ignore
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential # type: ignore
 from tensorflow.keras.layers import LSTM, Dense # type: ignore
 from statsmodels.tsa.api import VAR
 
-import os
-
-# def loadData():
-#     return pd.read_csv('BrentOilPrices.csv')
-
 def loadData():
-    file_path = os.path.join(os.path.dirname(__file__), '../data/BrentOilPrices.csv')
-    return pd.read_csv(file_path)
+    return pd.read_csv('docs/BrentOilPrices.csv')
 def oilPricOverTime(price_data):
     plt.figure(figsize=(12, 6))
     plt.plot(price_data['Price'])
